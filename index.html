@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri Unik & Lucu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #ffccd5, #c9f5ff);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .title {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.5rem;
+            color: #ff6b8b;
+            text-shadow: 3px 3px 0 #ffde59;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        
+        .name-nim {
+            background: linear-gradient(to right, #36d1dc, #5b86e5);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-bottom: 20px;
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+        
+        .name-nim:hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+        
+        .name {
+            font-size: 2.8rem;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nim {
+            font-size: 2rem;
+            color: #ffde59;
+            font-weight: 700;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #ff6b8b, #36d1dc, #5b86e5, #ffde59);
+        }
+        
+        .card-title {
+            font-family: 'Comic Neue', cursive;
+            color: #ff6b8b;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title i {
+            font-size: 1.5rem;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .info-label {
+            font-weight: 700;
+            color: #5b86e5;
+            display: inline-block;
+            min-width: 150px;
+        }
+        
+        .fun-facts {
+            background-color: #fff9e6;
+            border-left: 8px solid #ffde59;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 15px 15px 0;
+        }
+        
+        .fun-facts h3 {
+            color: #ff9a3c;
+            margin-bottom: 10px;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .fun-facts ul {
+            padding-left: 20px;
+        }
+        
+        .fun-facts li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .avatar-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #ffde59;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05) rotate(5deg);
+            border-color: #ff6b8b;
+        }
+        
+        .hobby-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .hobby-icon {
+            font-size: 2.5rem;
+            color: #5b86e5;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .hobby-icon:hover {
+            color: #ff6b8b;
+            transform: scale(1.3) rotate(10deg);
+        }
+        
+        .hobby-icon span {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            color: #666;
+            font-weight: 700;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(to right, #ff6b8b, #ff9a3c);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 139, 0.3);
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 2px dashed #ffde59;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .nim {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animasi untuk elemen unik */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Biodata Diri Unik & Lucu</h1>
+            
+            <div class="avatar-section">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=unicorn&backgroundColor=ffdfbf,ffd5dc,d1d4f9,c0aede,b6e3f4" alt="Avatar Lucu" class="avatar floating">
+            </div>
+            
+            <div class="name-nim pulse">
+                <div class="name">Bintang Kejora</div>
+                <div class="nim">NIM: 1234567890</div>
+            </div>
+            
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                Halo! Saya adalah mahasiswa yang suka belajar sambil tertawa. 
+                Saya percaya hidup terlalu singkat untuk serius terus! 
+                <span class="emoji">😄</span>
+            </p>
+        </div>
+        
+        <div class="content">
+            <div class="card">
+                <h2 class="card-title"><i class="fas fa-user-circle"></i> Tentang Saya</h2>
+                
+                <div class="info-item">
+                    <span class="info-label">Nama Lengkap:</span> Bintang Kejora
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Nama Panggilan:</span> Bintang <span class="emoji">⭐</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">TTL:</span> Kota Bahagia, 1 April 2002
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Jurusan:</span> Teknik Tertawa Ceria (TTC)
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Fakultas:</span> Ilmu Kelucuan dan Kreativitas
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Universitas:</span> Universitas Gembira Abadi (UNGA)
+                </div>
+                
+                <div class="fun-facts">
+                    <h3>Fakta Lucu Tentang Saya:</h3>
+                    <ul>
+                        <li>Saya bisa tertawa dalam 7 bahasa berbeda <span class="emoji">😂</span></li>
+                        <li>Makanan favorit saya adalah nasi goreng dengan es krim (percayalah, enak!)</li>
+                        <li>Saya pernah tersesat di perpustakaan kampus selama 3 jam</li>
+                        <li>Pacar saya adalah laptop dan buku catatan kuliah</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title"><i class="fas fa-heart"></i> Hobi & Kesukaan</h2>
+                
+                <p style="margin-bottom: 20px;">Inilah beberapa hal yang membuat saya tersenyum:</p>
+                
+                <div class="hobby-icons">
+                    <div class="hobby-icon">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Gaming</span>
+                    </div>
+                    <div class="hobby-icon">
+                        <i class="fas fa-utensils"></i>
+                        <span>Makan</span>
+                    </div>
+                    <div class="hobby-icon">
+                        <i class="fas fa-music"></i>
+                        <span>Musik</span>
+                    </div>
+                    <div class="hobby-icon">
+                        <i class="fas fa-film"></i>
+                        <span>Nonton Film</span>
+                    </div>
+                    <div class="hobby-icon">
+                        <i class="fas fa-cat"></i>
+                        <span>Kucing</span>
+                    </div>
+                    <div class="hobby-icon">
+                        <i class="fas fa-bed"></i>
+                        <span>Tidur</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h3 class="card-title"><i class="fas fa-star"></i> Keahlian Unik</h3>
+                    <p style="margin-top: 10px;">Tingkat kemampuan (skala 1-10):</p>
+                    
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="min-width: 180px;">Bercanda di saat tepat:</span>
+                            <div style="flex-grow: 1; height: 20px; background-color: #eee; border-radius: 10px; overflow: hidden;">
+                                <div style="width: 95%; height: 100%; background: linear-gradient(to right, #36d1dc, #5b86e5);"></div>
+                            </div>
+                            <span style="margin-left: 10px; font-weight: 700;">9.5/10</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="min-width: 180px;">Makan cepat:</span>
+                            <div style="flex-grow: 1; height: 20px; background-color: #eee; border-radius: 10px; overflow: hidden;">
+                                <div style="width: 90%; height: 100%; background: linear-gradient(to right, #ff6b8b, #ff9a3c);"></div>
+                            </div>
+                            <span style="margin-left: 10px; font-weight: 700;">9/10</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="min-width: 180px;">Tidur di kelas:</span>
+                            <div style="flex-grow: 1; height: 20px; background-color: #eee; border-radius: 10px; overflow: hidden;">
+                                <div style="width: 30%; height: 100%; background: linear-gradient(to right, #ffde59, #ff9a3c);"></div>
+                            </div>
+                            <span style="margin-left: 10px; font-weight: 700;">3/10 (berusaha mengurangi!)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title"><i class="fas fa-graduation-cap"></i> Pendidikan</h2>
+                
+                <div class="info-item">
+                    <span class="info-label">SD:</span> SD Negeri Bahagia No. 1
+                </div>
+                <div class="info-item">
+                    <span class="info-label">SMP:</span> SMP Ceria Terpadu
+                </div>
+                <div class="info-item">
+                    <span class="info-label">SMA:</span> SMA Pintar dan Gembira
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Perguruan Tinggi:</span> Universitas Gembira Abadi (S1 Teknik Tertawa Ceria)
+                </div>
+                
+                <h3 class="card-title" style="margin-top: 30px;"><i class="fas fa-envelope"></i> Kontak & Media Sosial</h3>
+                
+                <div class="info-item">
+                    <span class="info-label">Email:</span> bintang.kejora@unga.ac.id
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Instagram:</span> @bintang_tertawa
+                </div>
+                <div class="info-item">
+                    <span class="info-label">TikTok:</span> @bintangculu
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Telepon:</span> 0812-3456-7890
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="mailto:bintang.kejora@unga.ac.id" class="contact-button">
+                        <i class="fas fa-paper-plane"></i> Kirim Pesan Lucu ke Saya
+                    </a>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center; padding: 15px; background-color: #f0f8ff; border-radius: 15px;">
+                    <p style="font-style: italic; color: #5b86e5;">
+                        "Hidup itu seperti kopi, kadang pahit tapi bisa ditambah gula dan humor!"
+                    </p>
+                    <p style="margin-top: 10px; font-weight: 700;">~ Bintang Kejora ~</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Dibuat dengan <span class="emoji">❤</span> dan banyak tertawa oleh Bintang Kejora</p>
+            <p>© 2023 Biodata Unik & Lucu | NIM: 1234567890</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                Catatan: Halaman ini mengandung 99% humor dan 1% informasi serius
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Tambahkan interaktivitas sederhana
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animasi tambahan untuk kartu saat di-hover
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) rotate(1deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0)';
+                });
+            });
+            
+            // Animasi untuk ikon hobi
+            const hobbyIcons = document.querySelectorAll('.hobby-icon');
+            hobbyIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.3) rotate(10deg)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0)';
+                });
+            });
+            
+            // Efek saat mengklik nama dan NIM
+            const nameNim = document.querySelector('.name-nim');
+            nameNim.addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'pulse 2s infinite';
+                }, 10);
+                
+                // Buat efek konfeti sederhana
+                for(let i = 0; i < 20; i++) {
+                    const emoji = document.createElement('span');
+                    emoji.classList.add('emoji');
+                    emoji.textContent = '✨';
+                    emoji.style.position = 'absolute';
+                    emoji.style.left = Math.random() * window.innerWidth + 'px';
+                    emoji.style.top = Math.random() * window.innerHeight + 'px';
+                    emoji.style.fontSize = Math.random() * 20 + 10 + 'px';
+                    emoji.style.zIndex = '9999';
+                    document.body.appendChild(emoji);
+                    
+                    // Hapus emoji setelah animasi
+                    setTimeout(() => {
+                        emoji.remove();
+                    }, 2000);
+                }
+            });
+            
+            // Ubah warna latar belakang secara acak saat mengklik judul
+            const title = document.querySelector('.title');
+            title.addEventListener('click', function() {
+                const colors = ['#ffccd5', '#c9f5ff', '#e0ffcc', '#fff0cc', '#e6ccff'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.body.style.background = linear-gradient(135deg, ${randomColor}, ${colors[Math.floor(Math.random() * colors.length)]});
+            });
+        });
+    </script>
+</body>
+</html>
